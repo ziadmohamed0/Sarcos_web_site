@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SarcoOS — Elite Modular RTOS Framework for Teleoperation & Robotics</title>
+  <meta name="description" content="SarcoOS is a high-performance, modular firmware ecosystem designed to synchronize human kinetic movement with robotic precision.">
+  <meta name="keywords" content="SarcoOS, RTOS, ESP32, ROS 2, Robotics, Teleoperation, Embedded Systems, IIoT">
+  <meta name="author" content="Ziad Mohammed Fathy">
+  <meta property="og:title" content="SarcoOS — Elite Modular RTOS Framework">
+  <meta property="og:description" content="Synchronizing human kinetic movement with robotic precision through a distributed MQTT mesh">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== PRELOADER ==================== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <img src="assets/logo.png" alt="SarcoOS" class="preloader-logo">
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+      <span class="preloader-text">Initializing SarcoOS...</span>
+    </div>
+  </div>
+
+  <!-- ==================== SCROLL PROGRESS BAR ==================== -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="assets/logo.png" alt="SarcoOS Logo">
+        <span>Sarco<span class="text-accent">OS</span></span>
+      </a>
+      <div class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#overview" class="nav-link">Overview</a></li>
+        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+        <li><a href="#firmware" class="nav-link">Firmware</a></li>
+        <li><a href="#ros2" class="nav-link">ROS 2</a></li>
+        <li><a href="#design" class="nav-link">Design</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#timeline" class="nav-link">Timeline</a></li>
+        <li><a href="#team" class="nav-link">Team</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge" data-aos="fade-up">
+        <i class="fas fa-microchip"></i> Graduation Project 2026
+      </div>
+      <div class="hero-logo" data-aos="fade-up" data-aos-delay="100">
+        <img src="assets/logo.png" alt="SarcoOS">
+      </div>
+      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+        Sarco<span class="text-accent">OS</span>
+      </h1>
+      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+        Elite Modular RTOS Framework for Teleoperation & Robotics
+      </p>
+      <p class="hero-desc" data-aos="fade-up" data-aos-delay="400">
+        Synchronizing human kinetic movement with robotic precision through a distributed MQTT mesh
+      </p>
+      <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+        <a href="#overview" class="btn btn-primary">
+          <i class="fas fa-rocket"></i> Explore Project
+        </a>
+        <a href="#architecture" class="btn btn-outline">
+          <i class="fas fa-diagram-project"></i> View Architecture
+        </a>
+      </div>
+      <div class="hero-stats" data-aos="fade-up" data-aos-delay="600">
+        <div class="stat-item"><span class="stat-num" data-count="2">0</span><span class="stat-label">ESP32 Nodes</span></div>
+        <div class="stat-item"><span class="stat-num" data-count="4">0</span><span class="stat-label">ROS 2 Packages</span></div>
+        <div class="stat-item"><span class="stat-num" data-count="28">0</span><span class="stat-label">C++ Modules</span></div>
+        <div class="stat-item"><span class="stat-num" data-count="9">0</span><span class="stat-label">Team Members</span></div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+    </div>
+  </section>
+
+  <!-- ==================== OVERVIEW ==================== -->
+  <section class="section" id="overview">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Introduction</span>
+        <h2>Project <span class="text-accent">Essence</span></h2>
+        <div class="divider"></div>
+        <p>SarcoOS is a high-performance, modular firmware ecosystem designed to synchronize human kinetic movement with robotic precision. Developed with an emphasis on Industrial IoT (IIoT) standards, it facilitates a seamless teleoperation experience through a robust ESP32-based suit that communicates over a distributed MQTT mesh.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Real-Time Control</h3>
+          <p>Low-latency teleoperation with FreeRTOS-powered ESP32 nodes ensuring deterministic response times.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>IIoT Standards</h3>
+          <p>Built on QoS-aware MQTT messaging with dual-broker redundancy for mission-critical reliability.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Modular HAL/MCAL</h3>
+          <p>Strict hardware abstraction layers decoupling high-level logic from silicon, ensuring cross-platform portability.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon"><i class="fas fa-robot"></i></div>
+          <h3>ROS 2 Autonomy</h3>
+          <p>Native integration with ROS 2 for advanced path planning, SLAM, and autonomous navigation via Nav2.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
+          <h3>IIoT Dashboard</h3>
+          <p>Real-time Node-RED HMI with telemetry monitoring, dual-arm control, and mission coordination.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+          <h3>Custom PCB Design</h3>
+          <p>KiCad-designed control board with TMC2209 stepper drivers and optimized high-current power distribution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TECHNOLOGY STACK ==================== -->
+  <section class="section section-dark" id="stack">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Technologies</span>
+        <h2>Tech <span class="text-accent">Stack</span></h2>
+        <div class="divider"></div>
+        <p>A comprehensive ecosystem of industry-grade tools and frameworks powering SarcoOS</p>
+      </div>
+
+      <div class="stack-grid" data-aos="fade-up">
+        <div class="stack-category">
+          <h3 class="stack-cat-title"><i class="fas fa-microchip"></i> Firmware & RTOS</h3>
+          <div class="stack-items">
+            <span class="stack-item"><i class="fab fa-esp32"></i> ESP-IDF</span>
+            <span class="stack-item"><i class="fas fa-tasks"></i> FreeRTOS</span>
+            <span class="stack-item"><i class="fas fa-code"></i> C++17</span>
+            <span class="stack-item"><i class="fas fa-layer-group"></i> HAL/MCAL</span>
+            <span class="stack-item"><i class="fas fa-sliders-h"></i> PID Control</span>
+          </div>
+        </div>
+        <div class="stack-category">
+          <h3 class="stack-cat-title"><i class="fas fa-globe"></i> Communication</h3>
+          <div class="stack-items">
+            <span class="stack-item"><i class="fas fa-comments"></i> MQTT</span>
+            <span class="stack-item"><i class="fas fa-wifi"></i> WiFi Mesh</span>
+            <span class="stack-item"><i class="fas fa-exchange-alt"></i> ROS 2 Bridge</span>
+            <span class="stack-item"><i class="fas fa-plug"></i> UART/I2C/SPI</span>
+          </div>
+        </div>
+        <div class="stack-category">
+          <h3 class="stack-cat-title"><i class="fas fa-robot"></i> Robotics</h3>
+          <div class="stack-items">
+            <span class="stack-item"><i class="fas fa-cube"></i> ROS 2 Humble</span>
+            <span class="stack-item"><i class="fas fa-route"></i> Nav2</span>
+            <span class="stack-item"><i class="fas fa-map"></i> SLAM</span>
+            <span class="stack-item"><i class="fas fa-project-diagram"></i> URDF</span>
+          </div>
+        </div>
+        <div class="stack-category">
+          <h3 class="stack-cat-title"><i class="fas fa-chart-pie"></i> HMI & Dashboard</h3>
+          <div class="stack-items">
+            <span class="stack-item"><i class="fab fa-node-js"></i> Node-RED</span>
+            <span class="stack-item"><i class="fas fa-chart-line"></i> Live Charts</span>
+            <span class="stack-item"><i class="fas fa-tachometer-alt"></i> Telemetry</span>
+          </div>
+        </div>
+        <div class="stack-category">
+          <h3 class="stack-cat-title"><i class="fas fa-cube"></i> Mechanical Design</h3>
+          <div class="stack-items">
+            <span class="stack-item"><i class="fas fa-cubes"></i> SolidWorks</span>
+            <span class="stack-item"><i class="fas fa-print"></i> 3D Modeling</span>
+            <span class="stack-item"><i class="fas fa-tools"></i> Assembly</span>
+          </div>
+        </div>
+        <div class="stack-category">
+          <h3 class="stack-cat-title"><i class="fas fa-microchip"></i> Electronic Design</h3>
+          <div class="stack-items">
+            <span class="stack-item"><i class="fas fa-bolt"></i> KiCad</span>
+            <span class="stack-item"><i class="fas fa-pcb"></i> PCB Layout</span>
+            <span class="stack-item"><i class="fas fa-sitemap"></i> Schematic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ARCHITECTURE ==================== -->
+  <section class="section" id="architecture">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">System Design</span>
+        <h2>System <span class="text-accent">Architecture</span></h2>
+        <div class="divider"></div>
+        <p>End-to-end data orchestration from operator sensors to robotic execution</p>
+      </div>
+
+      <div class="arch-flow" data-aos="fade-up">
+        <div class="arch-node arch-suit">
+          <div class="arch-node-header">
+            <i class="fas fa-user"></i>
+            <h4>Operator Suit</h4>
+          </div>
+          <div class="arch-node-body">
+            <span class="chip">Potentiometers</span>
+            <span class="chip">IMU (MPU6050)</span>
+            <span class="chip">ESP32</span>
+          </div>
+        </div>
+
+        <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+
+        <div class="arch-node arch-broker">
+          <div class="arch-node-header">
+            <i class="fas fa-server"></i>
+            <h4>MQTT Broker</h4>
+          </div>
+          <div class="arch-node-body">
+            <span class="chip">Mosquitto</span>
+            <span class="chip">QoS 1</span>
+            <span class="chip">192.168.1.4</span>
+          </div>
+        </div>
+
+        <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+
+        <div class="arch-node arch-dashboard">
+          <div class="arch-node-header">
+            <i class="fas fa-chart-pie"></i>
+            <h4>Node-RED HMI</h4>
+          </div>
+          <div class="arch-node-body">
+            <span class="chip">Rover Control</span>
+            <span class="chip">Arm Telemetry</span>
+            <span class="chip">Gripper Toggle</span>
+          </div>
+        </div>
+
+        <div class="arch-arrow arch-arrow-down"><i class="fas fa-arrow-down"></i></div>
+
+        <div class="arch-node arch-sensor">
+          <div class="arch-node-header">
+            <i class="fas fa-microchip"></i>
+            <h4>Sensor Node (A)</h4>
+          </div>
+          <div class="arch-node-body">
+            <span class="chip">MPU6050 IMU</span>
+            <span class="chip">NEO-7M GPS</span>
+            <span class="chip">4x HC-SR04</span>
+          </div>
+        </div>
+
+        <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+
+        <div class="arch-node arch-control">
+          <div class="arch-node-header">
+            <i class="fas fa-cogs"></i>
+            <h4>Control Node (B)</h4>
+          </div>
+          <div class="arch-node-body">
+            <span class="chip">2x BTS7960</span>
+            <span class="chip">4x Servos</span>
+            <span class="chip">2x NEMA23</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="arch-bridge" data-aos="fade-up">
+        <div class="bridge-content">
+          <i class="fas fa-arrow-right-arrow-left"></i>
+          <span>ROS 2 Bridge — <code>sarcos_iot</code> connects MQTT mesh to ROS 2 graph</span>
+        </div>
+      </div>
+
+      <div class="data-flow" data-aos="fade-up">
+        <h3>Data Orchestration Pipeline</h3>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-num">01</div>
+            <div class="flow-info">
+              <h4>Sensor Acquisition</h4>
+              <p>Potentiometers & IMU read raw ADC/I2C data at 10 Hz</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">02</div>
+            <div class="flow-info">
+              <h4>HAL Processing</h4>
+              <p>Normalized data via complementary filter & multi-sampling</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">03</div>
+            <div class="flow-info">
+              <h4>MQTT Publication</h4>
+              <p>QoS 1 messages published to Mosquitto broker</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">04</div>
+            <div class="flow-info">
+              <h4>Command Execution</h4>
+              <p>BTS7960, Servos & Steppers driven via PID control</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FIRMWARE ==================== -->
+  <section class="section section-dark" id="firmware">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Embedded Engineering</span>
+        <h2>Firmware <span class="text-accent">Architecture</span></h2>
+        <div class="divider"></div>
+        <p>ESP-IDF v6.0.1 &middot; C++17 &middot; FreeRTOS — Layered HAL/MCAL pattern for maximum portability</p>
+      </div>
+
+      <div class="fw-layers" data-aos="fade-up">
+        <div class="fw-layer fw-app">
+          <div class="fw-layer-label">Application Layer</div>
+          <div class="fw-layer-items">
+            <span class="fw-chip">app_main</span>
+            <span class="fw-chip">Input Mapping</span>
+            <span class="fw-chip">Output Control</span>
+            <span class="fw-chip">Provisioning</span>
+          </div>
+        </div>
+        <div class="fw-arrow-layer"><i class="fas fa-arrow-down"></i></div>
+        <div class="fw-layer fw-hal">
+          <div class="fw-layer-label">HAL <span>(Hardware Abstraction Layer)</span></div>
+          <div class="fw-layer-items">
+            <span class="fw-chip">BTS7960</span>
+            <span class="fw-chip">Servo</span>
+            <span class="fw-chip">Stepper</span>
+            <span class="fw-chip">PID</span>
+            <span class="fw-chip">MPU6050</span>
+            <span class="fw-chip">DC Motor</span>
+            <span class="fw-chip">Potentiometer</span>
+            <span class="fw-chip">Ultrasonic</span>
+            <span class="fw-chip">TCRT5000</span>
+            <span class="fw-chip">LED &amp; Button</span>
+          </div>
+        </div>
+        <div class="fw-arrow-layer"><i class="fas fa-arrow-down"></i></div>
+        <div class="fw-layer fw-mcal">
+          <div class="fw-layer-label">MCAL <span>(Microcontroller Abstraction Layer)</span></div>
+          <div class="fw-layer-items">
+            <span class="fw-chip">WiFi (STA + AP)</span>
+            <span class="fw-chip">MQTT Client</span>
+            <span class="fw-chip">NVS Storage</span>
+            <span class="fw-chip">UART</span>
+          </div>
+        </div>
+        <div class="fw-arrow-layer"><i class="fas fa-arrow-down"></i></div>
+        <div class="fw-layer fw-rtos">
+          <div class="fw-layer-label">FreeRTOS + ESP-IDF</div>
+          <div class="fw-layer-items">
+            <span class="fw-chip">Task Scheduling</span>
+            <span class="fw-chip">Queue Management</span>
+            <span class="fw-chip">LEDC PWM</span>
+            <span class="fw-chip">I2C Driver</span>
+            <span class="fw-chip">ADC</span>
+            <span class="fw-chip">GPIO</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fw-details" data-aos="fade-up">
+        <div class="fw-detail-card">
+          <h3><i class="fas fa-server"></i> Sensor Node (Node A)</h3>
+          <p>Acquires environmental data from MPU6050 IMU, NEO-7M GPS, and 4x HC-SR04 ultrasonic sensors. Applies DSP filters (complementary filter for IMU, median filter for GPS) and publishes via MQTT. Includes captive portal provisioning, heartbeat monitoring, and UART bridge to STM32.</p>
+          <div class="fw-specs">
+            <span><strong>IMU:</strong> MPU6050, I2C, 10 Hz</span>
+            <span><strong>GPS:</strong> NEO-7M, UART, 1 Hz</span>
+            <span><strong>Ultrasonic:</strong> 4x HC-SR04, 5 Hz</span>
+          </div>
+        </div>
+        <div class="fw-detail-card">
+          <h3><i class="fas fa-gamepad"></i> Control Node (Node B)</h3>
+          <p>Drives all robotic actuators: 2x BTS7960 H-bridges for differential drive, 4x Feetech servos (95kg shoulder, 35kg elbow) for dual-arm manipulation, 2x NEMA23 + TB6600 steppers for wrist joints. PID closed-loop control for precision positioning.</p>
+          <div class="fw-specs">
+            <span><strong>Drive:</strong> 2x BTS7960, PWM</span>
+            <span><strong>Arm:</strong> 4x Servos, 50 Hz PWM</span>
+            <span><strong>Wrist:</strong> 2x NEMA23, TB6600</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ROS 2 ==================== -->
+  <section class="section" id="ros2">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Robotics Middleware</span>
+        <h2>ROS 2 <span class="text-accent">Integration</span></h2>
+        <div class="divider"></div>
+        <p>High-level autonomy, navigation, and intelligent IoT bridging through ROS 2 Humble</p>
+      </div>
+
+      <div class="ros-packages" data-aos="fade-up">
+        <div class="ros-pkg">
+          <div class="ros-pkg-icon"><i class="fas fa-cube"></i></div>
+          <div class="ros-pkg-info">
+            <h4><code>sarcos_description</code></h4>
+            <p>URDF kinematic models and 3D robot representation for simulation and visualization in RViz.</p>
+          </div>
+        </div>
+        <div class="ros-pkg">
+          <div class="ros-pkg-icon"><i class="fas fa-exchange-alt"></i></div>
+          <div class="ros-pkg-info">
+            <h4><code>sarcos_iot</code></h4>
+            <p>Intelligent ROS 2 &harr; MQTT bridge enabling bidirectional communication between the ESP32 distributed network and the high-level ROS graph.</p>
+          </div>
+        </div>
+        <div class="ros-pkg">
+          <div class="ros-pkg-icon"><i class="fas fa-route"></i></div>
+          <div class="ros-pkg-info">
+            <h4><code>sarcos_nav</code></h4>
+            <p>Navigation2 integration for autonomous path planning, SLAM mapping, and dynamic obstacle avoidance.</p>
+          </div>
+        </div>
+        <div class="ros-pkg">
+          <div class="ros-pkg-icon"><i class="fas fa-cogs"></i></div>
+          <div class="ros-pkg-info">
+            <h4><code>sarcos_diff</code></h4>
+            <p>Differential drive hardware interface and controller logic for the robotic mobile base.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ros-flow" data-aos="fade-up">
+        <div class="ros-flow-title">Data Flow</div>
+        <div class="ros-flow-diagram">
+          <div class="ros-flow-item">
+            <i class="fas fa-microchip"></i>
+            <span>ESP32 MQTT</span>
+          </div>
+          <i class="fas fa-arrow-right"></i>
+          <div class="ros-flow-item">
+            <i class="fas fa-code-branch"></i>
+            <span>sarcos_iot</span>
+          </div>
+          <i class="fas fa-arrow-right"></i>
+          <div class="ros-flow-item">
+            <i class="fas fa-map"></i>
+            <span>sarcos_nav</span>
+          </div>
+          <i class="fas fa-arrow-right"></i>
+          <div class="ros-flow-item">
+            <i class="fas fa-robot"></i>
+            <span>sarcos_diff</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DESIGN ==================== -->
+  <section class="section section-dark" id="design">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Mechanical &amp; Electronic</span>
+        <h2>CAD &amp; <span class="text-accent">PCB Design</span></h2>
+        <div class="divider"></div>
+        <p>Industrial-grade SolidWorks assemblies and KiCad PCB engineering</p>
+      </div>
+
+      <div class="design-grid">
+        <div class="design-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="design-card-header">
+            <i class="fas fa-cube"></i>
+            <h3>SolidWorks CAD</h3>
+          </div>
+          <p>Complete V2 robot assembly with detailed sub-assemblies including BTS7960 H-Bridge, MDR076A+ESP32-S3, Raspberry Pi 5, NEMA23 stepper, Tower Pro MG-995 servo, FT5335M 95kg servo, Fifteen52 rims, and caster wheel assembly.</p>
+          <div class="design-tags">
+            <span class="chip">65mm Tires</span>
+            <span class="chip">Servo Mounts</span>
+            <span class="chip">Motor Brackets</span>
+            <span class="chip">Sensor Platform</span>
+          </div>
+        </div>
+        <div class="design-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="design-card-header">
+            <i class="fas fa-microchip"></i>
+            <h3>KiCad PCB</h3>
+          </div>
+          <p>Custom control board featuring ESP32 integration with TMC2209-compatible stepper driver footprints, optimized power distribution for high-current motors, and professional 4-layer layout for signal integrity.</p>
+          <div class="design-tags">
+            <span class="chip">TMC2209</span>
+            <span class="chip">4-Layer</span>
+            <span class="chip">High-Current</span>
+            <span class="chip">ESP32-S3</span>
+          </div>
+        </div>
+        <div class="design-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="design-card-header">
+            <i class="fas fa-hand"></i>
+            <h3>Teleoperation Suit</h3>
+          </div>
+          <p>Modular wearable suit frame with potentiometer-based joint angle mapping, designed for ergonomic comfort and precise motion capture across all major upper-body articulations.</p>
+          <div class="design-tags">
+            <span class="chip">Potentiometer</span>
+            <span class="chip">Wearable</span>
+            <span class="chip">Ergonomic</span>
+            <span class="chip">Lightweight</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY ==================== -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Hardware Showcase</span>
+        <h2>Component <span class="text-accent">Gallery</span></h2>
+        <div class="divider"></div>
+        <p>Key hardware components powering the SarcoOS ecosystem</p>
+      </div>
+
+      <div class="gallery-grid" data-aos="fade-up">
+        <div class="gallery-item" data-img="assets/esp32.jpg">
+          <div class="gallery-img-wrapper">
+            <img src="assets/esp32.jpg" alt="ESP32 Development Board" loading="lazy">
+            <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="gallery-caption">
+            <h4>ESP32</h4>
+            <p>Dual-core MCU with WiFi + BLE</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-img="assets/bts.jpg">
+          <div class="gallery-img-wrapper">
+            <img src="assets/bts.jpg" alt="BTS7960 Motor Driver" loading="lazy">
+            <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="gallery-caption">
+            <h4>BTS7960</h4>
+            <p>High-current H-Bridge driver</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-img="assets/tb6600.png">
+          <div class="gallery-img-wrapper">
+            <img src="assets/tb6600.png" alt="TB6600 Stepper Driver" loading="lazy">
+            <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="gallery-caption">
+            <h4>TB6600</h4>
+            <p>Stepper motor driver (NEMA23)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LIGHTBOX ==================== -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" id="lightboxImg" alt="">
+  </div>
+
+  <!-- ==================== DASHBOARD ==================== -->
+  <section class="section section-dark" id="dashboard">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Human-Machine Interface</span>
+        <h2>IIoT <span class="text-accent">Dashboard</span></h2>
+        <div class="divider"></div>
+        <p>Real-time mission control powered by Node-RED with live telemetry</p>
+      </div>
+
+      <div class="dash-grid" data-aos="fade-up">
+        <div class="dash-card">
+          <div class="dash-icon"><i class="fas fa-compass"></i></div>
+          <h4>Rover Control</h4>
+          <p>Directional switches with real-time latency monitoring and status feedback</p>
+        </div>
+        <div class="dash-card">
+          <div class="dash-icon"><i class="fas fa-robot"></i></div>
+          <h4>Arm Telemetry</h4>
+          <p>Synchronized gauges and sliders for dual-arm configuration control</p>
+        </div>
+        <div class="dash-card">
+          <div class="dash-icon"><i class="fas fa-hand-peace"></i></div>
+          <h4>Gripper Control</h4>
+          <p>Independent toggle states with haptic feedback for precision manipulation</p>
+        </div>
+        <div class="dash-card">
+          <div class="dash-icon"><i class="fas fa-heartbeat"></i></div>
+          <h4>System Health</h4>
+          <p>Heartbeat monitoring, WiFi signal strength, and battery level indicators</p>
+        </div>
+      </div>
+
+      <div class="dash-tech" data-aos="fade-up">
+        <h3>Dashboard Tech Stack</h3>
+        <div class="dash-tech-items">
+          <div class="dash-tech-item">
+            <i class="fab fa-node-js"></i>
+            <span>Node-RED</span>
+          </div>
+          <div class="dash-tech-item">
+            <i class="fas fa-database"></i>
+            <span>MQTT Broker</span>
+          </div>
+          <div class="dash-tech-item">
+            <i class="fas fa-chart-line"></i>
+            <span>Real-Time Charts</span>
+          </div>
+          <div class="dash-tech-item">
+            <i class="fas fa-wifi"></i>
+            <span>WiFi Mesh</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TIMELINE ==================== -->
+  <section class="section" id="timeline">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Journey</span>
+        <h2>Project <span class="text-accent">Timeline</span></h2>
+        <div class="divider"></div>
+        <p>From concept to completion — the development journey of SarcoOS</p>
+      </div>
+
+      <div class="timeline" data-aos="fade-up">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Phase 1</span>
+            <h4>Concept &amp; Research</h4>
+            <p>Defining the teleoperation architecture, selecting MCU platforms, and evaluating IIoT communication protocols.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Phase 2</span>
+            <h4>Firmware Development</h4>
+            <p>Building the ESP-IDF modular HAL/MCAL stack with FreeRTOS task scheduling, MQTT integration, and sensor drivers.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Phase 3</span>
+            <h4>Hardware Design</h4>
+            <p>SolidWorks CAD modeling of the V2 robot, KiCad PCB layout with TMC2209 integration, and 3D printing of structural components.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Phase 4</span>
+            <h4>Dashboard &amp; HMI</h4>
+            <p>Node-RED flow development with real-time telemetry, rover controls, arm telemetry gauges, and gripper toggles.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Phase 5</span>
+            <h4>ROS 2 Integration</h4>
+            <p>Building the ROS 2 workspace with MQTT bridge, Nav2 autonomous navigation, differential drive control, and URDF models.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Phase 6</span>
+            <h4>Testing &amp; Deployment</h4>
+            <p>System integration testing, latency benchmarking, calibration of PID controllers, and deployment of the full teleoperation stack.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TEAM ==================== -->
+  <section class="section section-dark" id="team">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Our Team</span>
+        <h2>Project <span class="text-accent">Leadership</span></h2>
+        <div class="divider"></div>
+        <p>Engineered by a dedicated team of robotics and embedded systems specialists</p>
+      </div>
+
+      <div class="team-grid" data-aos="fade-up">
+        <div class="team-card lead-card">
+          <div class="team-avatar">
+            <i class="fas fa-user-astronaut"></i>
+          </div>
+          <h4>Ziad Mohammed Fathy</h4>
+          <span class="team-role">Technical Lead</span>
+          <p>Robotics &amp; Embedded Systems Specialist</p>
+          <div class="team-links">
+            <a href="https://github.com/ziadmohamed0" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ziad-mohamed-fathy/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h4>Dr. Ahmed Suwaidan</h4>
+          <span class="team-role">Supervisor</span>
+          <p>Faculty Mentor &amp; Project Advisor</p>
+        </div>
+        <div class="team-card team-card-members">
+          <div class="team-avatar">
+            <i class="fas fa-users"></i>
+          </div>
+          <h4>Project Team</h4>
+          <span class="team-role">8 Members</span>
+          <p>A collaborative effort by talented engineers passionate about robotics and embedded systems innovation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS BANNER ==================== -->
+  <section class="stats-banner">
+    <div class="container">
+      <div class="stats-banner-grid">
+        <div class="stats-banner-item">
+          <i class="fas fa-code"></i>
+          <span class="stats-banner-num" data-count="28">0</span>
+          <span>C++ Modules</span>
+        </div>
+        <div class="stats-banner-item">
+          <i class="fas fa-microchip"></i>
+          <span class="stats-banner-num" data-count="2">0</span>
+          <span>ESP32 Nodes</span>
+        </div>
+        <div class="stats-banner-item">
+          <i class="fas fa-cubes"></i>
+          <span class="stats-banner-num" data-count="4">0</span>
+          <span>ROS 2 Packages</span>
+        </div>
+        <div class="stats-banner-item">
+          <i class="fas fa-users"></i>
+          <span class="stats-banner-num" data-count="9">0</span>
+          <span>Team Members</span>
+        </div>
+        <div class="stats-banner-item">
+          <i class="fas fa-layer-group"></i>
+          <span class="stats-banner-num" data-count="4">0</span>
+          <span>Firmware Layers</span>
+        </div>
+        <div class="stats-banner-item">
+          <i class="fas fa-file-alt"></i>
+          <span class="stats-banner-num" data-count="36">0</span>
+          <span>Source Files</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BACK TO TOP ==================== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="SarcoOS">
+          <h3>Sarco<span class="text-accent">OS</span></h3>
+          <p>Elite Modular RTOS Framework for Teleoperation &amp; Robotics</p>
+          <div class="footer-social">
+            <a href="https://github.com/ziadmohamed0/sarcoos_project" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ziad-mohamed-fathy/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#firmware">Firmware</a></li>
+            <li><a href="#ros2">ROS 2</a></li>
+            <li><a href="#design">Design</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://github.com/ziadmohamed0/sarcoos_project" target="_blank">Source Code</a></li>
+            <li><a href="https://www.linkedin.com/in/ziad-mohamed-fathy/" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer-tech">
+          <h4>Powered By</h4>
+          <div class="tech-badges">
+            <span>ESP-IDF</span>
+            <span>FreeRTOS</span>
+            <span>MQTT</span>
+            <span>ROS 2</span>
+            <span>Node-RED</span>
+            <span>KiCad</span>
+            <span>SolidWorks</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SarcoOS &mdash; MIT License. Created with <i class="fas fa-heart"></i> by Ziad Mohammed Fathy</p>
+        <p class="footer-quote">&ldquo;Perfection is attained when there is nothing left to take away&rdquo; &mdash; Antoine de Saint-Exup&eacute;ry</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
