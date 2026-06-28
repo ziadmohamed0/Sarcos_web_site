@@ -409,6 +409,19 @@ code {
   transform: translateY(-2px);
 }
 
+.btn-github {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-github:hover {
+  background: #24292e;
+  border-color: #fff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 .hero-stats {
   display: flex;
   gap: 40px;
@@ -1444,6 +1457,51 @@ code {
   background: var(--gradient-1);
   color: #fff;
   transform: translateY(-2px);
+}
+
+/* ---------- SOURCE CALLOUT ---------- */
+.source-callout {
+  padding: 50px 0;
+  background: var(--gradient-hero);
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.source-callout-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.source-callout-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.source-callout-text {
+  flex: 1;
+  min-width: 260px;
+}
+
+.source-callout-text h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.source-callout-text p {
+  font-size: 0.9rem;
+  color: var(--text-dim);
 }
 
 /* ---------- FOOTER ---------- */
