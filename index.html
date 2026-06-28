@@ -9,8 +9,8 @@
   <meta name="author" content="Ziad Mohammed Fathy">
   <meta property="og:title" content="SarcoOS — Elite Modular RTOS Framework">
   <meta property="og:description" content="Synchronizing human kinetic movement with robotic precision through a distributed MQTT mesh">
-  <meta property="og:image" content="assets/logo.png">
-  <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta property="og:image" content="assets/new_logo.png">
+  <link rel="icon" type="image/png" href="assets/new_logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -21,7 +21,7 @@
   <!-- ==================== PRELOADER ==================== -->
   <div class="preloader" id="preloader">
     <div class="preloader-content">
-      <img src="assets/logo.png" alt="SarcoOS" class="preloader-logo">
+      <img src="assets/new_logo.png" alt="SarcoOS" class="preloader-logo">
       <div class="preloader-bar"><div class="preloader-fill"></div></div>
       <span class="preloader-text">Initializing SarcoOS...</span>
     </div>
@@ -34,7 +34,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="nav-logo">
-        <img src="assets/logo.png" alt="SarcoOS Logo">
+        <img src="assets/new_logo.png" alt="SarcoOS Logo">
         <span>Sarco<span class="text-accent">OS</span></span>
       </a>
       <div class="nav-toggle" id="navToggle">
@@ -62,7 +62,7 @@
         <i class="fas fa-microchip"></i> Graduation Project 2026
       </div>
       <div class="hero-logo" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets/logo.png" alt="SarcoOS">
+          <img src="assets/new_logo.png" alt="SarcoOS">
       </div>
       <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
         Sarco<span class="text-accent">OS</span>
@@ -541,9 +541,10 @@
         <span class="section-badge">Hardware Showcase</span>
         <h2>Component <span class="text-accent">Gallery</span></h2>
         <div class="divider"></div>
-        <p>Key hardware components powering the SarcoOS ecosystem</p>
+        <p>Key hardware components, CAD renders, and robot photos powering SarcoOS</p>
       </div>
 
+      <div class="gallery-category-label" data-aos="fade-up"><i class="fas fa-microchip"></i> Hardware Components</div>
       <div class="gallery-grid" data-aos="fade-up">
         <div class="gallery-item" data-img="assets/esp32.jpg">
           <div class="gallery-img-wrapper">
@@ -562,17 +563,115 @@
           </div>
           <div class="gallery-caption">
             <h4>BTS7960</h4>
-            <p>High-current H-Bridge driver</p>
+            <p>High-current H-Bridge motor driver</p>
           </div>
         </div>
-        <div class="gallery-item" data-img="assets/tb6600.png">
+        <div class="gallery-item" data-img="assets/tb6600.jpeg">
           <div class="gallery-img-wrapper">
-            <img src="assets/tb6600.png" alt="TB6600 Stepper Driver" loading="lazy">
+            <img src="assets/tb6600.jpeg" alt="TB6600 Stepper Driver" loading="lazy">
             <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
           </div>
           <div class="gallery-caption">
             <h4>TB6600</h4>
-            <p>Stepper motor driver (NEMA23)</p>
+            <p>Stepper motor driver for NEMA23</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-img="assets/servos.png">
+          <div class="gallery-img-wrapper">
+            <img src="assets/servos.png" alt="Feetech Servos" loading="lazy">
+            <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Feetech Servos</h4>
+            <p>95kg shoulder &amp; 35kg elbow joints</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-img="assets/mpu6050.png">
+          <div class="gallery-img-wrapper">
+            <img src="assets/mpu6050.png" alt="MPU6050 IMU" loading="lazy">
+            <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="gallery-caption">
+            <h4>MPU6050 IMU</h4>
+            <p>6-DOF inertial measurement unit</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-img="assets/ultrasonicc.jpeg">
+          <div class="gallery-img-wrapper">
+            <img src="assets/ultrasonicc.jpeg" alt="HC-SR04 Ultrasonic" loading="lazy">
+            <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="gallery-caption">
+            <h4>HC-SR04</h4>
+            <p>Ultrasonic distance sensor</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-category-label" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-cube"></i> CAD Renders</div>
+      <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="gallery-item" data-img="assets/fifteen52_rim.png">
+          <div class="gallery-img-wrapper">
+            <img src="assets/fifteen52_rim.png" alt="Fifteen52 Rim" loading="lazy">
+            <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Fifteen52 Rim</h4>
+            <p>SolidWorks wheel design</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-img="assets/tire_assembly.png">
+          <div class="gallery-img-wrapper">
+            <img src="assets/tire_assembly.png" alt="Tire Assembly" loading="lazy">
+            <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Tire Assembly</h4>
+            <p>Rim with Yokohama ADVAN tire</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-img="assets/servo_cad.jpg">
+          <div class="gallery-img-wrapper">
+            <img src="assets/servo_cad.jpg" alt="Servo CAD Model" loading="lazy">
+            <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Servo 35kg CAD</h4>
+            <p>Tower Pro MG-995 exploded view</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-category-label" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-camera"></i> Robot Photos</div>
+      <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
+        <div class="gallery-item" data-img="assets/robot_photo_1.jpeg">
+          <div class="gallery-img-wrapper">
+            <img src="assets/robot_photo_1.jpeg" alt="Robot Assembly" loading="lazy">
+            <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Robot Assembly</h4>
+            <p>Full hardware integration</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-img="assets/robot_photo_2.jpeg">
+          <div class="gallery-img-wrapper">
+            <img src="assets/robot_photo_2.jpeg" alt="Robot Side View" loading="lazy">
+            <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Side View</h4>
+            <p>Chassis &amp; drivetrain</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-img="assets/robot_photo_3.jpeg">
+          <div class="gallery-img-wrapper">
+            <img src="assets/robot_photo_3.jpeg" alt="Robot Top View" loading="lazy">
+            <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+          </div>
+          <div class="gallery-caption">
+            <h4>Top View</h4>
+            <p>Component layout overview</p>
           </div>
         </div>
       </div>
@@ -852,7 +951,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/logo.png" alt="SarcoOS">
+        <img src="assets/new_logo.png" alt="SarcoOS">
           <h3>Sarco<span class="text-accent">OS</span></h3>
           <p>Elite Modular RTOS Framework for Teleoperation &amp; Robotics</p>
           <div class="footer-social">

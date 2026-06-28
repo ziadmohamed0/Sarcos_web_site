@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/logo.png" width="100" alt="SarcoOS Logo">
+  <img src="assets/new_logo.png" width="100" alt="SarcoOS Logo">
   <h1>SarcoOS — Presentation Website</h1>
   <p><strong>Elite Modular RTOS Framework for Teleoperation & Robotics</strong></p>
 
@@ -28,7 +28,7 @@ Built with **pure HTML, CSS, and JavaScript** — no frameworks, no build tools.
 | **Firmware** | Layered HAL/MCAL visualization with Node A / Node B detail cards |
 | **ROS 2** | 4 ROS packages with data flow diagram |
 | **CAD & PCB** | SolidWorks, KiCad, and Teleoperation Suit design cards |
-| **Gallery** | Hardware component image grid with lightbox viewer |
+| **Gallery** | 12 images across 3 categories (Hardware, CAD Renders, Robot Photos) with lightbox |
 | **Dashboard** | IIoT Node-RED dashboard feature cards |
 | **Timeline** | 6-phase project development journey |
 | **Team** | Team cards with supervisor and technical lead |
@@ -88,10 +88,20 @@ Sarcos_web_site/
 ├── js/
 │   └── main.js         # All JS (400+ lines)
 ├── assets/
-│   ├── logo.png        # SarcoOS logo
-│   ├── esp32.jpg       # ESP32 board photo
-│   ├── bts.jpg         # BTS7960 driver photo
-│   └── tb6600.png      # TB6600 driver photo
+│   ├── new_logo.png       # SarcoOS logo
+│   ├── esp32.jpg          # ESP32 board photo
+│   ├── bts.jpg            # BTS7960 driver photo
+│   ├── tb6600.jpeg        # TB6600 driver photo
+│   ├── mpu6050.png        # MPU6050 IMU sensor
+│   ├── servos.png         # Feetech servos
+│   ├── ultrasonicc.jpeg   # HC-SR04 ultrasonic sensor
+│   ├── nodered.png        # Node-RED dashboard
+│   ├── fifteen52_rim.png  # CAD rim render
+│   ├── tire_assembly.png  # CAD tire assembly
+│   ├── servo_cad.jpg      # Servo CAD exploded view
+│   ├── robot_photo_1.jpeg # Robot assembly photo
+│   ├── robot_photo_2.jpeg # Robot side view
+│   └── robot_photo_3.jpeg # Robot top view
 └── README.md           # This file
 ```
 

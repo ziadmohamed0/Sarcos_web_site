@@ -197,12 +197,33 @@
 
   // ==================== COUNTER ANIMATION ====================
   function initCounters() {
-    const counters = document.querySelectorAll('.stat-num');
+    const selectors = ['.stat-num', '.stats-banner-num'];
+    let allCounters = [];
+    selectors.forEach((s) => {
+      document.querySelectorAll(s).forEach((c) => allCounters.push(c));
+    });
 
-    if (!counters.length) return;
+    if (!allCounters.length) return;
+
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.count, 10);
+      if (!target) { el.textContent = el.dataset.count || '0'; return; }
+      const duration = 1500;
+      const start = performance.now();
+
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target);
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(tick);
+    }
 
     if (!('IntersectionObserver' in window)) {
-      counters.forEach((c) => { c.textContent = c.dataset.count; });
+      allCounters.forEach((c) => { c.textContent = c.dataset.count || '0'; });
       return;
     }
 
@@ -215,31 +236,31 @@
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.2, rootMargin: '0px 0px -20px 0px' }
     );
 
-    counters.forEach((c) => observer.observe(c));
+    allCounters.forEach((c) => observer.observe(c));
 
-    function animateCounter(el) {
-      const target = parseInt(el.dataset.count, 10);
-      const duration = 2000;
-      const start = performance.now();
-
-      function tick(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(eased * target);
-
-        if (progress < 1) {
-          requestAnimationFrame(tick);
-        } else {
-          el.textContent = target;
+    // Hero counters are visible immediately — start them after preloader
+    setTimeout(() => {
+      document.querySelectorAll('.hero-stats .stat-num, .hero-stats .stats-banner-num').forEach((c) => {
+        if (c.textContent === '0' || c.textContent === '') {
+          animateCounter(c);
         }
-      }
+      });
+    }, 2800);
 
-      requestAnimationFrame(tick);
+    // Fallback: if counters still show 0 after 5s (or after preloader), force-set them
+    function forceCounters() {
+      allCounters.forEach((c) => {
+        if (c.textContent === '0' || c.textContent === '') {
+          c.textContent = c.dataset.count || '0';
+        }
+      });
     }
+    setTimeout(forceCounters, 5000);
+    // Also try again shortly after preloader hides (preloader hides ~2.5s in)
+    setTimeout(forceCounters, 3500);
   }
 
   // ==================== SMOOTH SCROLL FOR ANCHOR LINKS ====================
