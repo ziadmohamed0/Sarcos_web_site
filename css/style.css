@@ -1335,8 +1335,8 @@ code {
 /* ---------- TEAM ---------- */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
 }
 
 .team-card {
@@ -1354,6 +1354,9 @@ code {
   box-shadow: var(--shadow-glow);
 }
 
+.supervisor-card { border-color: rgba(255, 215, 0, 0.3); background: rgba(255, 215, 0, 0.04); }
+.supervisor-card .team-avatar { background: var(--accent-dim); color: var(--accent); }
+.supervisor-card:hover .team-avatar { background: var(--gradient-2); color: #fff; }
 .lead-card { border-color: rgba(0, 212, 255, 0.2); }
 
 .team-avatar {
